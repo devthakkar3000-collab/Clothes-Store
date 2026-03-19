@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Outfit Finder</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="app">
+      <header>
+        <h1>AI Outfit Finder</h1>
+        <p>
+          Describe the look you want, and we will build a full outfit with links to
+          buy pieces from stores like Hollister and H&amp;M.
+        </p>
+      </header>
+
+      <section class="prompt-box">
+        <label for="outfitPrompt">Outfit prompt</label>
+        <textarea
+          id="outfitPrompt"
+          placeholder="Example: casual fall outfit for coffee date, neutral colors"
+        ></textarea>
+        <button id="buildOutfitBtn" type="button">Find My Outfit</button>
+      </section>
+
+      <section id="result" class="result hidden" aria-live="polite">
+        <h2>Your suggested outfit</h2>
+        <p id="summary"></p>
+        <div id="itemGrid" class="grid"></div>
+      </section>
+    </main>
+
+    <template id="itemCardTemplate">
+      <article class="card">
+        <h3 class="item-name"></h3>
+        <p class="item-reason"></p>
+        <div class="links">
+          <a class="buy-hollister" target="_blank" rel="noopener noreferrer">Buy at Hollister</a>
+          <a class="buy-hm" target="_blank" rel="noopener noreferrer">Buy at H&amp;M</a>
+        </div>
+      </article>
+    </template>
+
+    <script src="script.js"></script>
+  </body>
+</html>
